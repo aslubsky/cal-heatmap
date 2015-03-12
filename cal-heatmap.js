@@ -1310,6 +1310,20 @@
 			 */
 			function expandItemName(value) {
 				
+				if (typeof value === "string") {
+-					return [value, value];
+-				}
+-	
+-				if (Array.isArray(value)) {
+-					if (value.length === 1) {
+-						return [value[0], value[0]];
+-					} else if (value.length > 2) {
+-						return value.slice(0, 2);
+-					}
+-	
+-					return value;
+-				}
+				
 				return ["item", "items"];
 			}
 	
