@@ -1309,20 +1309,7 @@
 			 * @return {array}       An array like [singular-form, plural-form]
 			 */
 			function expandItemName(value) {
-				if (typeof value === "string") {
-					return [value, value + (value !== "" ? "s" : "")];
-				}
-	
-				if (Array.isArray(value)) {
-					if (value.length === 1) {
-						return [value[0], value[0] + "s"];
-					} else if (value.length > 2) {
-						return value.slice(0, 2);
-					}
-	
-					return value;
-				}
-	
+				
 				return ["item", "items"];
 			}
 	
