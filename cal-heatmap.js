@@ -957,6 +957,13 @@
 						return x + options.label.offset.x;
 	
 					})
+                    .attr("font-weight", function(d) {
+                        if (new Date(d).getDay() === 0) {
+                            return "bold";
+                        } else {
+                            return "normal";
+                        }
+                    })
 					.attr("text-anchor", function() {
 						switch(options.label.align) {
 						case "start":
